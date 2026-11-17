@@ -90,6 +90,7 @@ twelvelabs = ["vision-agents-plugins-twelvelabs"]
 speechify = ["vision-agents-plugins-speechify"]
 stream = ["vision-agents-plugins-stream"]
 omni = ["vision-agents-plugins-omni"]
+videodb = ["vision-agents-plugins-videodb"]
 
 
 [tool.hatch.metadata]

@@ -2,6 +2,10 @@
 
 ## Features
 
+### `videodb` plugin: VideoDB video understanding
+
+New opt-in `videodb` plugin exposing `VideoDBVLM`, a `VideoLLM` backed by VideoDB. It buffers recent frames, encodes a short MP4 clip, uploads it to a VideoDB collection, extracts one time-based scene with several sampled frames and describes it with the request's prompt, so the agent can answer about what happened across the clip. Uploaded clips are deleted afterwards unless `keep_clips=True`. Reads `VIDEO_DB_API_KEY`. Install with `vision-agents[videodb]`.
+
 ### The JavaScript SDK draws a streaming card a statement at a time
 
 While a reply's OpenUI streams, `TurnUI.content` now holds only its finished statements: the one no newline has ended yet is held back, so a card no longer reflows with every delta or shows a gauge reading 8 before 86. `ui_completed` still shows the whole program. A turn has no `Turn.ui` until a statement is finished, so `LiveUI` leaves a reply its text rather than showing an empty card. A reply interrupted before its UI completed settles when the turn ends, keeping its last statement if it closed (#2042).
